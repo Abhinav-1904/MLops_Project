@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.env
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+data/raw/*
+data/processed/*
+models/*.pkl
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep 
