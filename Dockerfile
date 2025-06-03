@@ -13,6 +13,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application
 COPY . .
 
+# Generate data and train model during build
+RUN python src/download_data.py && python src/train_model.py
+
 # Create necessary directories
 RUN mkdir -p data/raw data/processed models
 

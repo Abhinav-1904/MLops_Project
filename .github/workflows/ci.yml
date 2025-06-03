@@ -77,3 +77,7 @@ jobs:
           # Cleanup
           docker stop test-app
           docker rm test-app
+
+      - name: Print Docker logs on failure
+        if: failure()
+        run: docker logs test-app
