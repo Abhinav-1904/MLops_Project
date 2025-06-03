@@ -44,6 +44,9 @@ jobs:
         run: |
           black . --check
 
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
+
       - name: Run tests
         run: |
           pytest --cov=./ --cov-report=xml
