@@ -141,7 +141,7 @@ if st.button("Predict"):
             "population",
             "habitat",
         ]
-        input_df = input_df.reindex(columns=required_columns, fill_value='')
+        input_df = input_df.reindex(columns=required_columns, fill_value="")
 
         # Ensure all categorical columns are of object dtype
         for col in required_columns:
@@ -164,9 +164,7 @@ if st.button("Predict"):
         # Show probabilities
         st.subheader("Class Probabilities")
         # Create DataFrame with classes as index and probability as value
-        prob_df = pd.DataFrame({
-            'Probability': probabilities[0]
-        }, index=model.classes_)
+        prob_df = pd.DataFrame({"Probability": probabilities[0]}, index=model.classes_)
         st.bar_chart(prob_df)
 
         # Show feature importance if using Random Forest
@@ -177,7 +175,10 @@ if st.button("Predict"):
 
             # Create DataFrame with processed feature names and importance scores
             feature_importance = pd.DataFrame(
-                {"Feature": processed_feature_names, "Importance": model.feature_importances_}
+                {
+                    "Feature": processed_feature_names,
+                    "Importance": model.feature_importances_,
+                }
             )
             st.bar_chart(feature_importance.set_index("Feature"))
 
