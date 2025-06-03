@@ -51,6 +51,28 @@ pip install -r requirements.txt
 streamlit run app/app.py
 ```
 
+## Data Generation and Model Training
+
+1. Download and process the dataset:
+```bash
+python src/data_processing.py
+```
+
+2. Train the model:
+```bash
+python src/model.py
+```
+
+The data processing script will:
+- Download the UCI Mushroom dataset
+- Clean and preprocess the data
+- Save processed data to `data/processed/`
+
+The model training script will:
+- Load the processed data
+- Train the classification model
+- Save the trained model and preprocessor to `models/`
+
 ## Docker Support
 
 Build and run using Docker:
