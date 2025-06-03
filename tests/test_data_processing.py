@@ -77,7 +77,7 @@ def test_save_and_load_preprocessor():
         categorical_features, numerical_features
     )
 
-    # Save and load the preprocessor
+    # Save and load the preprocessorr
     with tempfile.TemporaryDirectory() as tmpdir:
         filepath = os.path.join(tmpdir, "preprocessor.pkl")
         save_preprocessor(preprocessor, filepath)
